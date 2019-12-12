@@ -50,7 +50,7 @@ public class Test5 {
 	//배열선언하면서 크기만 지정하기	
 		int[] num= new int[3];   
 //		System.out.println(num.length);
-//        System.out.println(num[0]);  index(위치):2
+//        System.out.println(num[0]);  index(마지막)위치(위치):2
 //        System.out.println(num[1]);
 //        System.out.println(num[2]);
         
