@@ -30,28 +30,22 @@ public class Test2 {
 //		
 //		학점계산하기
 //		4년간의 학기별 학점을 입력후 총평점구하기
-		int[][] num=new int[4][2];
-		Scanner scan=new Scanner(System.in);
-		int input,sum=0;
 		
-		for(int i=0;i<num.length;i++) {
-			for(int j=0;j<num[i].length;j++) {
-				System.out.println((i+1)+"년"+(j+1)+"학기 학점을 입력하세요.");
-				input=scan.nextInt();
-				num[i][j]=input;
-				sum+=input;
+		int[][] num = new int[4][2];
+		Scanner scan = new Scanner(System.in);
+		double input;
+		double sum = 0;
+
+		for (int i = 0; i < num.length; i++) {
+			for (int j = 0; j < num[i].length; j++) {
+				System.out.println((i + 1) + "년" + (j + 1) + "학기 학점을 입력하세요.");
+				input = scan.nextDouble();
+				num[i][j] = (int) (input);
+				sum += input;
 			}
-		}System.out.println("총평점:"+sum);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		}
+		System.out.println("총평점:" + (sum) / ((num.length) * (num[1].length)));
+
 //		
 //		
 //		
@@ -65,18 +59,7 @@ public class Test2 {
 //		
 //		
 //		
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 		
 		
