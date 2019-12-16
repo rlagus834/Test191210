@@ -8,7 +8,7 @@ public class Cal1main {
 		// TODO Auto-generated method stub
 		Scanner scan=new Scanner(System.in);
 		Cal1 c1=new Cal1();
-		int input2=0,input3=0;
+		int input2=0,input3=0,count=0;
 while(true) {
 	System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 	System.out.println("1.덧셈|2.뺄셈|3.곱셈|4.나눗셈|5.종료");

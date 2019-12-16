@@ -2,7 +2,7 @@ package test;
 
 public class Car {
 
-	
+	//필드
 	String color;
 	int speed;
 	String type;
