@@ -3,6 +3,7 @@ package test;
 public class Iciamember {
 
 	String name;
+	
 	int age;
 	String gender;
 	

@@ -9,6 +9,8 @@ public class Calculatormain {
 		System.out.println(cal.sum(1, 3));
 		cal.sum1(1, 2, 3);
 		
+		System.out.println(cal.toString())
+		;
 	}
 
 }
