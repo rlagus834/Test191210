@@ -71,7 +71,8 @@ Car car6=new Car("빨강",5,"가","나","");
 System.out.println(car6.toString());
 
 
-
+Car car7=new Car("빨강",150);
+System.out.println(car7.toString());
 
 
 

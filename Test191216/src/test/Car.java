@@ -43,8 +43,10 @@ Car(String color, int speed, String type, String model, String company){
 	
 }
 
-
-
+//생성자가 하나라도 생성하면 기본생성자는 없다고 봐도된다...(기본생성자를 선언하고싶으면 따로 만들어줘야함
+//Car(){                  <이런식으로!
+//	
+//}
 
 
 
