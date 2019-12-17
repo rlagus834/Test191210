@@ -1,7 +1,6 @@
 package test;
 
 public class Car {
-
 	//필드
 	String color;
 	int speed;
@@ -9,20 +8,12 @@ public class Car {
 	String model;
 	String company="벤틀리";
 	
-	//기본생성자 선언
-	
+	//기본생성자 선언	
 Car(){
 	//필드값을 세팅 or
 	//매개변수로 넘겨받은 값을 필드값으로 세팅
 	type="하이브리드";
 }
-
-
-
-
-
-
-
 	//매개변수가 있는 생성자 선언
 //매개변수 :color,speed 매개(연결)
 Car(String color, int speed)	{

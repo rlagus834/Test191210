@@ -16,7 +16,7 @@ while(true) {
 	
 	int input1=scan.nextInt();
 	if(1==input1) {
-	c1.sum(input2,input2);
+	c1.sum(input2,input3);
 
 	}else if(2==input1) {
 		c1.subtract(input2,input3);	
@@ -30,6 +30,7 @@ while(true) {
 	}else {
 		System.out.println("잘못된접근입니다.");
 	}
+	
 	
 	
 	
