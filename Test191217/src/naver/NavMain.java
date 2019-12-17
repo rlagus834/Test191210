@@ -12,7 +12,8 @@ public class NavMain {
 			System.out.println(na.toString());
 		
 			//id 필드에 저장된값 getter메소드이용하여출력하기
-			System.out.println(na.getId());
+		na.setEmail("유리");
+		System.out.println(na.getEmail());
 				
 		
 		
