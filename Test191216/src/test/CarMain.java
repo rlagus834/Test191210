@@ -16,6 +16,7 @@ public class CarMain {
 		Car car3 =null;
 //		car3=new car3();
 //Car 클래스에 있는 필드 사용
+		
 //		안되는이유=정확한 위치를알려줘야함
 //		color="검정"; 나쁜예
 //		car.color="검정"; 좋은예

@@ -12,6 +12,7 @@ private String email;
 private String phone;	
 
 
+
 public Navermember(String id, String password, String name, String birth, String gender, String email, String phone) {
 	
 	this.id = id;
@@ -26,6 +27,7 @@ public Navermember(String id, String password, String name, String birth, String
 	
 }
 
+
 //id 필드값을 저장하고 가져오고 싶을때
 //getter메소드= 값출력,setter 메소드= 세팅하는  값을 대입하는 메소드
 public String getId() {
@@ -36,28 +38,20 @@ public void setId(String id) {
 }
 
 
+//naver클래스에 기본생성자를 선언하여
+//기본생성자를이용해 member1객체를 선언한뒤 모든 필드 값을 본인옆사람의 정보로지정해보세요
+//이름 성별 전화번호 생년월일 직업
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-public String getPassword() {
+public String getpassword() {
 	return password;
 }
+public void setpassword(String password) {
+	this.password=password;
+}
 
-public void setPassword(String password) {
-	this.password = password;
+
+public Navermember() {
+	
 }
 
 public String getName() {
