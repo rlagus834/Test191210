@@ -10,7 +10,7 @@ public class TestMain {
 		
 		
 		
-		
+		Test ts=new Test(1231,"sdsds","Sdsds",12313);
 		
 		
 		
