@@ -60,12 +60,11 @@ public class BankMain {
 					}else if(2==input04) {
 						System.out.println("얼마를 출금하시겠습니까?");
 						int input06=scan.nextInt();
-						if(list.get(input02).getMoney()==0) {
-							System.out.println("잔액이 0원이라 출금이 불가능합니다.");
-						}else if(list.get(input02).getMoney()<input06){
+						 if(list.get(input02).getMoney()<input06){
 							System.out.println("잔액이부족합니다.");
+							}else {
+								list.get(input02).outMoney(input06);
 							}
-						list.get(input02).outMoney(input06);
 					}else if(3==input04) {						
 						System.out.println("송금할 고객의 고객번호와 계좌번호를 입력하세요");
 						System.out.println("고객번호");
@@ -77,13 +76,12 @@ public class BankMain {
 						int input11=scan.nextInt();
 						if(list.get(input02).getMoney()<input11){
 							System.out.println("잔액이부족합니다.");
-							}else if(list.get(input02).getMoney()==0){
-								System.out.println("잔액이없습니다.");
+							}else {
+									list.get(input02).outMoney(input11);	
+									list.get(input08).saveMoney(input11);
 								}
-						list.get(input02).outMoney(input11);	
-						list.get(input08).saveMoney(input11);
-												
-							}
+						
+							}}
 						
 					
 					else if(4==input04) {
@@ -98,7 +96,7 @@ public class BankMain {
 					}
 					
 					
-				}
+				
 				
 			}else if(3==input) {
 				System.out.println("종료하였습니다.");
