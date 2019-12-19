@@ -24,14 +24,17 @@ public class BankMain {
 		
 		List<Bank> list=new ArrayList<Bank>();
 		while(run) {
-			System.out.println("1.관리자 접근|2.은행 이용|3.시스템종료");
+			System.out.println("1.관리자 접근|2.은행 이용|3.시스템종료|4.계정목록");
 			int input=scan.nextInt();
 			if(1==input) {
-				count1++;
-				count++;
+				System.out.println("1.고객정보등록|2.회원목록");				
+				int input99=scan.nextInt();
+				if(input99==1) {
 				System.out.println("비밀번호를 입력하세요");
 				int sysinput=scan.nextInt();
 				if(sysinput==7347) {
+					count1++;
+					count++;
 					System.out.println("고객정보를 등록하세요");										
 					System.out.println("고객이름");
 					String input2=scan.next();
@@ -44,11 +47,18 @@ public class BankMain {
 					System.out.println("고객님의 고객번호는"+count+"입니다");					
 				}else {
 					System.out.println("잘못된접근입니다");
+				}}else if(input99==2&&count1>=1) {
+					for(int i=0;i<list.size();i++) {
+						System.out.println("회원이름:"+list.get(i).getName()+"   보유금액:"+
+					list.get(i).getMoney()+"  계좌번호:"+list.get(i).getNnum()+"  고객번호:"+list.get(i).getCount());
+					}
+				}else {
+					System.out.println("잘못된접근입니다");
 				}
 			}else if(2==input&&count1>=1) {
 				System.out.println("고객번호를입력하세요");
 				int input02=scan.nextInt();				
-				System.out.println("계좌번호를 입력하세요");
+				System.out.println("계좌번호를 입력하세요");				
 				String input03=scan.next();
 				if(list.get(input02).getNnum().equals(input03)) {
 					System.out.println("1.예금|2.출금|3.송금|4.잔액확인|5.시스템종료");
