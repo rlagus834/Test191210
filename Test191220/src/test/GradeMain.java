@@ -10,7 +10,7 @@ public class GradeMain {
 		Scanner scan = new Scanner(System.in);
 		int javaMaxScore = 0, serveltMaxScore = 0, springMaxScore = 0, count = 0,countNumber=0;
 		boolean run = true;
-
+		Grade gr = null;
 		while (run) {
 			System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 			System.out.println("1.학생등록|2.과목별 점수입력|3.점수리스트|4.과목별 최고점수|5.종료");
@@ -18,7 +18,7 @@ public class GradeMain {
 			System.out.println("선택>");
 			int choiceInput = scan.nextInt();
 			if (1 == choiceInput) {
-				Grade gr = new Grade();
+				gr = new Grade();
 				count++;
 				countNumber++;
 				gr.setStudentNumber(countNumber);
@@ -35,6 +35,16 @@ public class GradeMain {
 				System.out.println("전화번호:");
 				int phoneNumber = scan.nextInt();
 				gr.setPhoneNumber(phoneNumber);
+				System.out.println("학과:1.컴퓨터 2.전자 3.정보통신 4.경영");
+				int major = scan.nextInt();
+				if(major==1) {
+					//enum쓰는법
+					//major 필드에 컴퓨터공학 저장
+					gr.setMajor(Major.전자공학과);
+				}else if(major==2) {
+					//major 필드에 컴퓨터공학 저장
+					gr.setMajor(Major.정밀기계과);
+				}
 				list.add(gr);
 			} else if (2 == choiceInput && count >= 1) {
 				System.out.println("학생이름을 입력하세요");
@@ -70,12 +80,9 @@ public class GradeMain {
 					}
 					System.out.println(javaMaxScore);
 				} else if (2 == gradeChoiceInput) {
-					for (int i = 0; i < list.size(); i++) {
-						if (serveltMaxScore < list.get(i).getServletScore()) {
-							serveltMaxScore = list.get(i).getServletScore();
-						}
+				gr.serveltMax(list);
 
-					}
+					
 					System.out.println(serveltMaxScore);
 				} else if (3 == gradeChoiceInput) {
 					for (int i = 0; i < list.size(); i++) {

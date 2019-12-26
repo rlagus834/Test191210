@@ -1,5 +1,7 @@
 package test;
 
+import java.util.*;
+
 public class Grade {
 //	학생번호 이름 생년월일 주소 전화번호 자바점수 서블렛점수 스프링 점수
 private int studentNumber;
@@ -10,7 +12,7 @@ private int phoneNumber;
 private int javaScore;
 private int servletScore;
 private int springScore;
-
+private Major major;
 public Grade() {
 	
 }
@@ -100,7 +102,27 @@ public void setSpringScore(int springScore) {
 }
 
 
+public void serveltMax(List<Grade> list) {
+	int serveltMaxScore=0;
 	
+	for (int i = 0; i < list.size(); i++) {
+		
+		if (serveltMaxScore < list.get(i).getServletScore()) {
+			serveltMaxScore = list.get(i).getServletScore();
+		}
+
+	}
+	System.out.println(serveltMaxScore);
+	
+}
+
+public Major getMajor() {
+	return major;
+}
+
+public void setMajor(Major major) {
+	this.major = major;
+}
 	
 	
 	
