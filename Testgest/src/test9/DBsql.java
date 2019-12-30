@@ -1,5 +1,6 @@
 package test9;
 
+import java.util.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,8 +8,10 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class DBsql {
+	Naver na=null;
 	Connection con = null;
 	PreparedStatement pstmt = null;
+	PreparedStatement pstmtSelect = null;
 	ResultSet rs = null;
 	Scanner scan = new Scanner(System.in);
 DBConnection dbc=new DBConnection();
@@ -17,12 +20,11 @@ DBConnection dbc=new DBConnection();
 	}
 	
 	public void joinMembership() {
-		String sql = "INSERT INTO MEMBER VALUES(?,?,?,?,?,?,TO_CHAR(SYSDATE),?)";
+		String sql = "INSERT INTO MEMBER VALUES(?,?,?,?,?,?,SYSDATE,?)";
 		try {
 			pstmt = con.prepareStatement(sql);
-			System.out.println("아이디 입력");
+			System.out.println("아이디 입력");			
 			String Input0 = scan.next();
-	
 			pstmt.setString(1, Input0);
 			System.out.println("비밀번호 입력");
 			String Input1 = scan.next();
@@ -42,6 +44,7 @@ DBConnection dbc=new DBConnection();
 			System.out.println("성별 입력");
 			String Input6 = scan.next();
 			pstmt.setString(7, Input6);
+			
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -202,25 +205,39 @@ DBConnection dbc=new DBConnection();
 
 	}
 
-	public void selectAll() {
-		String sql = "SELECT * FROM MEMBER";
+	
+			
+	
+
+	public List<Naver> selectAll2() {
+		List<Naver> list=new ArrayList<Naver>();
+		String sql = "SELECT * FROM MEMBER ORDER BY JOINDAY";
 		try {
 			pstmt = con.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			while (rs.next()) {
-				System.out.print("아이디: "+rs.getString("id"));
-				System.out.print(" 비밀번호: "+rs.getString("password"));
-				System.out.print(" 이름: "+rs.getString("name"));
-				System.out.print(" 생년월일: "+rs.getString("birth"));
-				System.out.print(" 이메일: "+rs.getString("email"));
-				System.out.print(" 전화번호: "+rs.getString("phone"));
-				System.out.print(" 생성날짜: "+rs.getString("joinday"));
-				System.out.println(" 성별: "+rs.getString("gender"));
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+			
+				Naver na=new Naver(	rs.getString("id"),
+						rs.getString("password"),
+						rs.getString("name"),rs.getString("birth"),
+						rs.getString("email"),rs.getString("phone"),
+						rs.getString("joinday"),rs.getString("gender"));
+				
+				list.add(na);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		return list;
+		
+		
 	}
 
+	
+	
+	
+	
+	
 }
