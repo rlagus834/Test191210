@@ -205,9 +205,23 @@ public void delete() {
 	}
 	
 }
-public void group() {
-	
-	
+public void DESC() {
+	String sql="SELECT * FROM STUDENT ORDER BY STUDENTNO";
+	try {
+		pstmt=con.prepareStatement(sql);
+		rs=pstmt.executeQuery();
+		while(rs.next()) {
+			System.out.print(rs.getInt("studentNo"));
+			System.out.print(rs.getString("name"));
+			System.out.print(rs.getInt("age"));
+			System.out.print(rs.getString("address"));
+			System.out.print(rs.getString("gender"));
+			System.out.println(rs.getString("phone"));						
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 }
 
 

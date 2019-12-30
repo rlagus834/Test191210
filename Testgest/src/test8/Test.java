@@ -8,15 +8,13 @@ public class Test {
 		// TODO Auto-generated method stub
 		Scanner scan=new Scanner(System.in);
 
-		int a,b,c=0;
-
+		int a,b,c;
+		    c=scan.nextInt();
+		for(int i=1;i<=c;i++){
 		a=scan.nextInt();
-		for(int i=1;i<=a;i++){
 		b=scan.nextInt();
-		    c=c+b;
+		System.out.println( "Case #x: "+(a+b));
 		}
-
-		System.out.println(c);
 	}
 
 }

@@ -26,7 +26,7 @@ DBsql sql=new DBsql();
 
 Scanner scan=new Scanner(System.in);
 Student sd=new Student();
-System.out.println("0.DB접속1.전체조회,2.추가,3.삭제,4.입력시 데이터추가,5.입력추가,6.전체조회(arrayList),7.여자조건검색,8.주소인천,9.번호변경");
+System.out.println("0.DB접속1.전체조회,2.추가,3.삭제,4.입력시 데이터추가,5.입력추가,6.전체조회(arrayList),7.여자조건검색,8.주소인천,9.번호변경10.오름차순 출력");
 boolean run=true;
 while(run) {
 	int input=scan.nextInt();
@@ -59,6 +59,9 @@ break;
 		break;
 	case 9:
 		sql.updatePhone();
+		break;
+	case 10:
+		sql.DESC();
 		break;
 		
 	}
