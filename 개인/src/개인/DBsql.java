@@ -50,13 +50,10 @@ public class DBsql {
 				i++;
 				dice1 = dice;
 				if (dice1 >= 13) {					
-					dice1 = dice1 - 12;
-					if (1 <= dice1) {
+					dice1 = dice1 - 12;					
 						// 보너스
-						bonus(user1);
-					} else {
+						bonus(user1);					
 						play(dice1, user1, user2);
-					}
 				} else {
 					play(dice1, user1, user2);
 				}
